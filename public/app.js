@@ -47,4 +47,12 @@ $(document).on("click", "#savenote", function() {
   $("#bodyinput").val("");
 });
 
-
+$("#scrape").on("click", function() {
+  $.ajax({
+      method: "GET",
+      url: "/scrape",
+  }).done(function(data) {
+      console.log(data)
+      window.location = "/"
+  })
+});
